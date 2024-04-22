@@ -40,7 +40,7 @@ function validatesLogin() {
     const user = new User(username, password);
 
     if (user.isValid()) {
-        window.location.href = 'index.html';
+        window.location.href = 'index.php';
     } else {
         alert('Invalid login credentials. Please try again.');
     }

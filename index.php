@@ -39,34 +39,34 @@
       <nav class="navbar navbar-expand-lg">
         <div class="container">
           <img src="assets/images/rentrover.png" alt="logo">
-          <a class="navbar-brand" href="index.html"><h2>RentRover</h2></a>
+          <a class="navbar-brand" href="index.php"><h2>RentRover</h2></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="index.html">Home
+                    <a class="nav-link" href="index.php">Home
                       <span class="sr-only">(current)</span>
                     </a>
                 </li> 
 
-                <li class="nav-item"><a class="nav-link" href="fleet.html">Cars</a></li>
-                <li class="nav-item"><a class="nav-link" href="offers.html">Offers</a></li>
+                <li class="nav-item"><a class="nav-link" href="fleet.php">Cars</a></li>
+                <li class="nav-item"><a class="nav-link" href="offers.php">Offers</a></li>
 
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">More</a>
                     
                     <div class="dropdown-menu">
                       
-                      <a class="dropdown-item" href="team.html">Team</a>
-                      <a class="dropdown-item" href="terms.html">Reviews</a>
+                      <a class="dropdown-item" href="team.php">Team</a>
+                      <a class="dropdown-item" href="testimonials.php">Reviews</a>
                     </div>
                 </li>
 
-                <li class="nav-item"><a class="nav-link" href="about-us.html">About Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="about-us.php">About Us</a></li>
                 
-                <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.php">Contact Us</a></li>
             </ul>
           </div>
         </div>
@@ -100,7 +100,7 @@
             <div class="product-item">
               <a href="offers.html"><img src="assets/images/raize.png" alt=""></a>
               <div class="down-content">
-                <a href="offers.html"><h4>Toyota Raize</h4></a>
+                <a href="offers.php"><h4>Toyota Raize</h4></a>
                 <h6><small>from</small></small> ₱ 1,590 <small>per day</small></h6>
                 <p>a compact SUV designed to elevate your driving experience. With its sleek and dynamic exterior, the Raize makes a bold statement on the road.</p>
               </div>
@@ -109,7 +109,7 @@
 
           <div class="col-md-4">
             <div class="product-item">
-              <a href="offers.html"><img src="assets/images/rav4.jpg" alt=""></a>
+              <a href="offers.php"><img src="assets/images/rav4.jpg" alt=""></a>
               <div class="down-content">
                 <a href="offers.html"><h4>Toyota Rav4 </h4></a>
                 <h6><small>from</small></small> ₱ 2,390 <small>per day</small></h6>
@@ -120,9 +120,9 @@
 
           <div class="col-md-4">
             <div class="product-item">
-              <a href="offers.html"><img src="assets/images/landc.jpg" alt=""></a>
+              <a href="offers.php"><img src="assets/images/landc.jpg" alt=""></a>
               <div class="down-content">
-                <a href="offers.html"><h4>Toyota Land Cruiser</h4></a>
+                <a href="offers.php"><h4>Toyota Land Cruiser</h4></a>
                 <h6><small>from</small> ₱ 2,990 <small>per day</small></h6>
                 <p> a legendary icon in the world of adventure and exploration. Renowned for its rugged reliability and uncompromising off-road capability, the Land Cruiser is the epitome of durability and strength. </p>
               </div>
@@ -143,7 +143,7 @@
           <div class="col-md-6">
             <div class="left-content">
               <p>At RentRover, we're not just about cars; we're about journeys. Founded with a passion for simplifying travel, RentRover offers a seamless car rental experience designed to empower adventurers and commuters alike. Our mission is simple: to provide convenient, reliable, and affordable transportation solutions tailored to your needs. With a diverse fleet of vehicles and a commitment to exceptional customer service, RentRover is your trusted partner for getting you where you need to go, whether it's for business or pleasure. Discover the freedom of the open road with RentRover today. Your journey starts here.</p>
-              <a href="about-us.html" class="filled-button">Read More</a>
+              <a href="about-us.php" class="filled-button">Read More</a>
             </div>
           </div>
           <div class="col-md-6">
@@ -211,7 +211,7 @@
             <div class="section-heading">
               <h2>Reviews</h2>
 
-              <a href="testimonials.html">read more <i class="fa fa-angle-right"></i></a>
+              <a href="testimonials.php">read more <i class="fa fa-angle-right"></i></a>
             </div>
           </div>
           <div class="col-md-12">
@@ -224,7 +224,7 @@
                 </div>
                 <div class="down-content">
                   <h4>Tappy Luke</h4>
-                  <p class="n-m"><em>"Lorem ipsum dolor sit amet, consectetur an adipisicing elit. Itaque, corporis nulla at quia quaerat."</em></p>
+                  <p class="n-m"><em>"I recently used RentRover for a weekend trip, and I was thoroughly impressed with their service. The booking process was seamless, and I was able to choose from a wide range of vehicles to suit my needs. "</em></p>
                 </div>
               </div>
               
@@ -234,7 +234,7 @@
                 </div>
                 <div class="down-content">
                   <h4>Ian Tapilot</h4>
-                  <p class="n-m"><em>"Lorem ipsum dolor sit amet, consectetur an adipisicing elit. Itaque, corporis nulla at quia quaerat."</em></p>
+                  <p class="n-m"><em>"I needed a car for a last-minute trip, and RentRover came through for me. Their website was easy to navigate, and I was able to quickly find the perfect car for my trip. "</em></p>
                 </div>
               </div>
               
@@ -244,7 +244,7 @@
                 </div>
                 <div class="down-content">
                   <h4>Antony Davis</h4>
-                  <p class="n-m"><em>"Lorem ipsum dolor sit amet, consectetur an adipisicing elit. Itaque, corporis nulla at quia quaerat."</em></p>
+                  <p class="n-m"><em>"RentRover exceeded my expectations with their outstanding customer service. From the moment I made my reservation to the time I returned the car, their team was friendly, professional, and accommodating."</em></p>
                 </div>
               </div>
               
@@ -281,7 +281,7 @@
         </div>
       </div>
     </div>
-
+</div>
     
     <footer>
       <div class="container">

@@ -39,34 +39,34 @@
       <nav class="navbar navbar-expand-lg">
         <div class="container">
           <img src="assets/images/rentrover.png" alt="logo">
-          <a class="navbar-brand" href="index.html"><h2>RentRover</h2></a>
+          <a class="navbar-brand" href="index.php"><h2>RentRover</h2></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="index.html">Home
+                    <a class="nav-link" href="index.php">Home
                       <span class="sr-only">(current)</span>
                     </a>
                 </li> 
 
-                <li class="nav-item"><a class="nav-link" href="fleet.html">Cars</a></li>
-                <li class="nav-item"><a class="nav-link" href="offers.html">Offers</a></li>
+                <li class="nav-item"><a class="nav-link" href="fleet.php">Cars</a></li>
+                <li class="nav-item"><a class="nav-link" href="offers.php">Offers</a></li>
 
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">More</a>
                     
                     <div class="dropdown-menu">
                       
-                      <a class="dropdown-item" href="team.html">Team</a>
-                      <a class="dropdown-item" href="terms.html">Reviews</a>
+                      <a class="dropdown-item" href="team.php">Team</a>
+                      <a class="dropdown-item" href="testimonials.php">Reviews</a>
                     </div>
                 </li>
 
-                <li class="nav-item"><a class="nav-link" href="about-us.html">About Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="about-us.php">About Us</a></li>
                 
-                <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.php">Contact Us</a></li>
             </ul>
           </div>
         </div>
@@ -105,18 +105,17 @@
 	4. Copy only URL and paste it within the src="" field below
 -->
             <div id="map">
-              <iframe src="https://maps.google.com/maps?q=Av.+L%C3%BAcio+Costa,+Rio+de+Janeiro+-+RJ,+Brazil&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="330px" frameborder="0" style="border:0" allowfullscreen></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3925.1705155733725!2d123.8998979675901!3d10.32823531679426!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sph!4v1713799832393!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
           </div>
           <div class="col-md-4">
             <div class="left-content">
               <h4>About our office</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisic elit. Sed voluptate nihil eumester consectetur similiqu consectetur.<br><br>Lorem ipsum dolor sit amet, consectetur adipisic elit. Et, consequuntur, modi mollitia corporis ipsa voluptate corrupti.</p>
+              <p>At RentRover, we pride ourselves on being more than just a car rental service; we're your trusted partner for all your transportation needs. Our office is more than just a location—it's the heart of our operations, where exceptional service meets convenience.</p>
               <ul class="social-icons">
                 <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                 <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                <li><a href="#"><i class="fa fa-behance"></i></a></li>
+               
               </ul>
             </div>
           </div>

@@ -583,6 +583,8 @@ footer .inner-content {
 
 footer .inner-content p {
 	text-transform: uppercase;
+	display: flex;
+	align-items: center;
 }
 
 footer .inner-content p a {
