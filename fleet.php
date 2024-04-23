@@ -458,17 +458,17 @@
           </div>
           <div class="modal-body">
             <div class="contact-form">
-              <form action="#" id="contact">
+              <form action="booking.php" method="post" >
                   <div class="row">
                        <div class="col-md-6">
                           <fieldset>
-                            <input type="text" class="form-control" placeholder="Pick-up location" required="">
+                            <input type="text" class="form-control" placeholder="Pick-up location" required="" name="pickuploc">
                           </fieldset>
                        </div>
 
                        <div class="col-md-6">
                           <fieldset>
-                            <input type="text" class="form-control" placeholder="Return location" required="">
+                            <input type="text" class="form-control" placeholder="Return location" required="" name="returnloc">
                           </fieldset>
                        </div>
                   </div>
@@ -476,28 +476,28 @@
                   <div class="row">
                        <div class="col-md-6">
                           <fieldset>
-                            <input type="text" class="form-control" placeholder="Pick-up date/time" required="">
+                            <input type="datetime-local" class="form-control" placeholder="Pick-up date/time" required="" name= "pickupdt">
                           </fieldset>
                        </div>
 
                        <div class="col-md-6">
                           <fieldset>
-                            <input type="text" class="form-control" placeholder="Return date/time" required="">
+                            <input type="datetime-local" class="form-control" placeholder="Return date/time" required="" name= "returndt">
                           </fieldset>
                        </div>
                   </div>
-                  <input type="text" class="form-control" placeholder="Enter full name" required="">
+                  <input type="text" class="form-control" placeholder="Enter full name" required="" name="fullName">
 
                   <div class="row">
                        <div class="col-md-6">
                           <fieldset>
-                            <input type="text" class="form-control" placeholder="Enter email address" required="">
+                            <input type="text" class="form-control" placeholder="Enter email address" required="" name="email">
                           </fieldset>
                        </div>
 
                        <div class="col-md-6">
                           <fieldset>
-                            <input type="text" class="form-control" placeholder="Enter phone" required="">
+                            <input type="text" class="form-control" placeholder="Enter phone" required="" name="phone">
                           </fieldset>
                        </div>
 
