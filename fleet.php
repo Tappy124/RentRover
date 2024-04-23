@@ -353,9 +353,9 @@
               <div class="down-content">
                 <h4>Large: Premium</h4>
 
-                <h6><small>from</small> $99 <small>per weekend</small></h6>
+                <h6><small>from</small> $99 <small>per weekend</small></h6> 
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum, aliquam!</p>
+                <p>text here</p>
 
                 <small>
                     <strong title="passegengers"><i class="fa fa-user"></i> 5</strong> &nbsp;&nbsp;&nbsp;&nbsp;
@@ -380,7 +380,7 @@
 
                 <h6><small>from</small> $99 <small>per weekend</small></h6>
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum, aliquam!</p>
+                <p>text here</p>
 
                 <small>
                     <strong title="passegengers"><i class="fa fa-user"></i> 5</strong> &nbsp;&nbsp;&nbsp;&nbsp;
@@ -405,7 +405,7 @@
 
                 <h6><small>from</small> $99 <small>per weekend</small></h6>
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum, aliquam!</p>
+                <p>text</p>
 
                 <small>
                     <strong title="passegengers"><i class="fa fa-user"></i> 5</strong> &nbsp;&nbsp;&nbsp;&nbsp;

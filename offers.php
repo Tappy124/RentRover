@@ -97,11 +97,11 @@
               <img src="assets/images/offer-1-370x270.jpg" alt="">
 
               <div class="down-content">
-                <h4>Lorem ipsum dolor sit amet.</h4>
+                <h4>text here</h4>
 
                 <h6><small>from</small> $99 <small>per weekend</small></h6>
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum, aliquam!</p>
+                <p>text here</p>
               </div>
             </div>
           </div>
@@ -111,11 +111,11 @@
               <img src="assets/images/offer-2-370x270.jpg" alt="">
 
               <div class="down-content">
-                <h4>Lorem ipsum dolor sit amet.</h4>
+                <h4>text here</h4>
 
                 <h6><small>from</small> $99 <small>per weekend</small></h6>
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum, aliquam!</p>
+                <p>text</p>
               </div>
             </div>
           </div>
@@ -125,11 +125,11 @@
               <img src="assets/images/offer-3-370x270.jpg" alt="">
 
               <div class="down-content">
-                <h4>Lorem ipsum dolor sit amet.</h4>
+                <h4>text here</h4>
 
                 <h6><small>from</small> $99 <small>per weekend</small></h6>
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum, aliquam!</p>
+                <p>text here</p>
               </div>
             </div>
           </div>
@@ -139,11 +139,11 @@
               <img src="assets/images/offer-4-370x270.jpg" alt="">
 
               <div class="down-content">
-                <h4>Lorem ipsum dolor sit amet.</h4>
+                <h4>text here</h4>
 
                 <h6><small>from</small> $99 <small>per weekend</small></h6>
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum, aliquam!</p>
+                <p>text here</p>
               </div>
             </div>
           </div>
@@ -153,11 +153,11 @@
               <img src="assets/images/offer-5-370x270.jpg" alt="">
 
               <div class="down-content">
-                <h4>Lorem ipsum dolor sit amet.</h4>
+                <h4>text here</h4>
 
                 <h6><small>from</small> $99 <small>per weekend</small></h6>
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum, aliquam!</p>
+                <p>text here</p>
               </div>
             </div>
           </div>
@@ -167,11 +167,11 @@
               <img src="assets/images/offer-6-370x270.jpg" alt="">
 
               <div class="down-content">
-                <h4>Lorem ipsum dolor sit amet.</h4>
+                <h4>text here</h4>
 
                 <h6><small>from</small> $99 <small>per weekend</small></h6>
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum, aliquam!</p>
+                <p>text here</p>
               </div>
             </div>
           </div>
@@ -194,7 +194,7 @@
         <div class="row">
           <div class="col-md-12">
             <div class="inner-content">
-              <p>Copyright © 2020 Company Name - Template by: <a href="https://www.phpjabbers.com/">PHPJabbers.com</a></p>
+              <p>Copyright © 2024 RentRover</p>
             </div>
           </div>
         </div>
@@ -213,7 +213,7 @@
           </div>
           <div class="modal-body">
             <div class="contact-form">
-              <form action="#" id="contact">
+              <form action="booking.php" id="contact">
                   <div class="row">
                        <div class="col-md-6">
                           <fieldset>

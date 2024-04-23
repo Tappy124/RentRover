@@ -80,8 +80,8 @@
         <div class="row">
           <div class="col-md-12">
             <div class="text-content">
-              <h4>Lorem ipsum dolor</h4>
-              <h2>Our Team Members</h2>
+              <h4></h4>
+              <h2>Our Team </h2>
             </div>
           </div>
         </div>
@@ -108,7 +108,7 @@
               <div class="down-content">
                 <h4>Ian Christian Tapilot</h4>
                 <span>Backend Dev</span>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing itaque corporis nulla.</p>
+                <p>Text</p>
               </div>
             </div>
           </div>
@@ -129,7 +129,7 @@
               <div class="down-content">
                 <h4>Angel Manatad</h4>
                 <span>Frontend Dev</span>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing itaque corporis nulla.</p>
+                <p>text</p>
               </div>
             </div>
           </div>
