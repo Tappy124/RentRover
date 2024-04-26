@@ -1,3 +1,29 @@
+<?php
+// Include the PHP file with database connection and user authentication functions
+require_once("server.php");
+
+// Check if the form is submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Get username and password from the form
+    $username = $_POST["username"];
+    $password = $_POST["password"];
+
+    // Call login_user() function to authenticate user
+    $login_result = login_user($username, $password);
+
+    // Handle login result
+    if ($login_result === "Login successful") {
+        // Redirect user to dashboard or any other page
+        header("Location: dashboard.php");
+        exit();
+    } else {
+        $error_message = "Login failed. " . $login_result;
+    }
+}
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +36,7 @@
 <body>
     
     <div class="container">
-        
+    <Form action=">
             <h1>Login</h1>
             <div class="input-box">
                 

@@ -87,8 +87,7 @@
         </div>
       </div>
     </div>
-    <section>
-    <input id="gfg" type="text" placeholder="Search here" id="search-item" onkeyup="search()"> <button>Search</button>
+    <input id="gfg" type="text" placeholder="Search here"> <button>Search</button>
     <button id="filter-button" class="button">Filter</button>
 <div id="filter-container" class="filters">
   <ul class="filters__list">
@@ -104,7 +103,7 @@
   <input id="f3" type="checkbox" />
     <label for="f3">Compact</label>
     </li>
-</section> 
+    
     
   </ul></div>
     <div class="products">
@@ -424,11 +423,11 @@
 
           <div class="col-md-12">
             <ul class="pages">
-              <li  class= "active"><a href="#">1</a></li>
+              <li><a href="fleet.php">1</a></li>
               <li><a href="fleet2.php">2</a></li>
-              <li><a href="fleet3.php">3</a></li>
+              <li class= "active"><a href="fleet3.php">3</a></li>
               <li><a href="fleet4.php">4</a></li>
-              <li><a href="fleet2.php"><i class="fa fa-angle-double-right"></i></a></li>
+              <li><a href="fleet4.php"><i class="fa fa-angle-double-right"></i></a></li>
             </ul>
           </div>
         </div>
