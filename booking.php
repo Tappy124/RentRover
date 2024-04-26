@@ -17,7 +17,7 @@ $pickuploc = $_POST['pickuploc'];
 $returnloc = $_POST['returnloc'];
 $pickupdt = $_POST['pickupdt'];
 $returndt = $_POST['returndt'];
-$fullname = $_POST['fullname'];
+$fullname = $_POST['fullName'];
 $email = $_POST['email'];
 $phone = $_POST['phone'];
 
