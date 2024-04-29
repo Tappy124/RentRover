@@ -1,87 +1,100 @@
 <?php
-// Database connection parameters
-$servername = "localhost";
-$username = "root";
-$password = " ";
-$database = "carrental";
+session_start();
 
-// Create connection
-$conn = new mysqli($servername, $username, $password, $database);
+// initializing variables
+$username = "";
+$email    = "";
+$errors = array(); 
+
+// connect to the database
+$db = mysqli_connect('localhost', 'root', '', 'carrental');
 
 // Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+if (!$db) {
+    die("Connection failed: " . mysqli_connect_error());
 }
 
-// Function to sanitize user inputs
-function sanitize_input($input) {
-    return htmlspecialchars(trim($input));
-}
+// REGISTER USER
+if (isset($_POST['reg_user'])) {
+    // receive all input values from the form
+    $username = mysqli_real_escape_string($db, $_POST['username']);
+    $email = mysqli_real_escape_string($db, $_POST['email']);
+    $password_1 = mysqli_real_escape_string($db, $_POST['password_1']);
+    $password_2 = mysqli_real_escape_string($db, $_POST['password_2']);
 
-// Function to handle user registration
-function register_user($username, $password) {
-    global $conn;
-    
-    // Sanitize inputs
-    $username = sanitize_input($username);
-    // You should hash the password before storing it in the database for security
-    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+    // form validation: ensure that the form is correctly filled ...
+    // by adding (array_push()) corresponding error unto $errors array
+    if (empty($username)) { array_push($errors, "Username is required"); }
+    if (empty($email)) { array_push($errors, "Email is required"); }
+    if (empty($password_1)) { array_push($errors, "Password is required"); }
+    if ($password_1 != $password_2) {
+        array_push($errors, "The two passwords do not match");
+    }
 
-    // Check if username already exists
-    $stmt = $conn->prepare("SELECT * FROM users WHERE username = ?");
-    $stmt->bind_param("s", $username);
-    $stmt->execute();
-    $result = $stmt->get_result();
+    // first check the database to make sure 
+    // a user does not already exist with the same username and/or email
+    $user_check_query = "SELECT * FROM users WHERE username='$username' OR email='$email' LIMIT 1";
+    $result = mysqli_query($db, $user_check_query);
+    if (!$result) {
+        die("Query failed: " . mysqli_error($db));
+    }
 
-    if ($result->num_rows > 0) {
-        return "Username already exists";
-    } else {
-        // Insert new user into database
-        $stmt = $conn->prepare("INSERT INTO users (username, password) VALUES (?, ?)");
-        $stmt->bind_param("ss", $username, $hashed_password);
-        if ($stmt->execute()) {
-            return "Registration successful";
+    $user = mysqli_fetch_assoc($result);
+
+    if ($user) { // if user exists
+        if ($user['username'] === $username) {
+            array_push($errors, "Username already exists");
+        }
+
+        if ($user['email'] === $email) {
+            array_push($errors, "Email already exists");
+        }
+    }
+
+    // Finally, register user if there are no errors in the form
+    if (count($errors) == 0) {
+        $password = password_hash($password_1, PASSWORD_DEFAULT); //encrypt the password before saving in the database
+
+        $query = "INSERT INTO users (username, email, password) 
+                  VALUES('$username', '$email', '$password')";
+        if (mysqli_query($db, $query)) {
+            $_SESSION['username'] = $username;
+            $_SESSION['success'] = "You are now logged in";
+            header('location: index.php');
         } else {
-            return "Registration failed";
+            echo "Error: " . $query . "<br>" . mysqli_error($db);
         }
     }
 }
 
-// Function to handle user login
-function login_user($username, $password) {
-    global $conn;
+// LOGIN USER
+if (isset($_POST['login_user'])) {
+    $username = mysqli_real_escape_string($db, $_POST['username']);
+    $password = mysqli_real_escape_string($db, $_POST['password']);
 
-    // Sanitize inputs
-    $username = sanitize_input($username);
+    if (empty($username)) {
+        array_push($errors, "Username is required");
+    }
+    if (empty($password)) {
+        array_push($errors, "Password is required");
+    }
 
-    // Check if username exists
-    $stmt = $conn->prepare("SELECT * FROM users WHERE username = ?");
-    $stmt->bind_param("s", $username);
-    $stmt->execute();
-    $result = $stmt->get_result();
-
-    if ($result->num_rows == 1) {
-        $row = $result->fetch_assoc();
-        // Verify password
-        if (password_verify($password, $row['password'])) {
-            return "Login successful";
+    if (count($errors) == 0) {
+        $query = "SELECT * FROM users WHERE username='$username'";
+        $results = mysqli_query($db, $query);
+        if (mysqli_num_rows($results) == 1) {
+            $user = mysqli_fetch_assoc($results);
+            if (password_verify($password, $user['password'])) {
+                $_SESSION['username'] = $username;
+                $_SESSION['success'] = "You are now logged in";
+                header('location: index.php');
+                exit(); // Add exit to prevent further execution
+            } else {
+                array_push($errors, "Wrong username/password combination");
+            }
         } else {
-            return "Invalid password";
+            array_push($errors, "Wrong username/password combination");
         }
-    } else {
-        return "User not found";
     }
 }
-
-// Example usage:
-// Register a user
-//$registration_result = register_user("example_user", "example_password");
-//echo $registration_result;
-
-// Login a user
-//$login_result = login_user("example_user", "example_password");
-//echo $login_result;
-
-// Close connection
-$conn->close();
 ?>

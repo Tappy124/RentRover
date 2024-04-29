@@ -89,31 +89,16 @@
     </div>
     <section>
     <input id="gfg" type="text" placeholder="Search here" id="search-item" onkeyup="search()"> <button>Search</button>
-    <button id="filter-button" class="button">Filter</button>
-<div id="filter-container" class="filters">
-  <ul class="filters__list">
-    <li>
-  <input id="f1" type="checkbox" />
-    <label for="f1">SUV</label>
-    </li>
-        <li>
-  <input id="f2" type="checkbox" />
-    <label for="f2">Sports Car</label>
-    </li>
-        <li>
-  <input id="f3" type="checkbox" />
-    <label for="f3">Compact</label>
-    </li>
+    
 </section> 
     
   </ul></div>
-    <div class="products">
+    <div class="products" id="product-list">
       <div class="container">
         <div class="row">
           <div class="col-md-4">
             <div class="product-item">
               <img src="assets/images/innova.webp" alt="">
-
               <div class="down-content">
                 <h4>Toyota Innova</h4>
 
@@ -515,52 +500,7 @@
     </div>
 </div>
 
-    <script>
-      var button = document.getElementById("filter-button");
-var container = document.getElementById("filter-container");
-var input = document.querySelectorAll("input");
-
-button.onclick = function (e) {
-  e.stopPropagation();
-  if (container.classList.contains("filters--active")) {
-    container.classList.remove("filters--active");
-  } else {
-    container.classList.add("filters--active");
-  }
-};
-
-container.onclick = function (e) {
-  e.stopPropagation();
-};
-
-window.onclick = function () {
-  container.classList.remove("filters--active");
-};
-
-console.log(input);
-
-for (var i = 0; i < input.length; i++) {
-  var currentInput = input[i];
-
-  currentInput.onclick = function () {
-    var isChecked = false;
-    for (var j = 0; j < input.length; j++) {
-      if (input[j].checked) {
-        isChecked = true;
-        break;
-      }
-    }
-
-    if (isChecked) {
-      button.classList.add("button--highlight");
-    } else {
-      button.classList.remove("button--highlight");
-    }
-  };
-}
-
-  </script>
-
+   
 
 
     <!-- Bootstrap core JavaScript -->
@@ -571,6 +511,7 @@ for (var i = 0; i < input.length; i++) {
     <!-- Additional Scripts -->
     <script src="assets/js/custom.js"></script>
     <script src="assets/js/owl.js"></script>
+    <script src="assets/js/search.js"></script>
   </body>
 
 </html>

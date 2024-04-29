@@ -1,28 +1,7 @@
 <?php
 // Include the PHP file with database connection and user authentication functions
 require_once("server.php");
-
-// Check if the form is submitted
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Get username and password from the form
-    $username = $_POST["username"];
-    $password = $_POST["password"];
-
-    // Call login_user() function to authenticate user
-    $login_result = login_user($username, $password);
-
-    // Handle login result
-    if ($login_result === "Login successful") {
-        // Redirect user to dashboard or any other page
-        header("Location: dashboard.php");
-        exit();
-    } else {
-        $error_message = "Login failed. " . $login_result;
-    }
-}
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -36,28 +15,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
     
     <div class="container">
-    <Form action=">
+        <form action="server.php" method="post">    
+            <?php include('errors.php')?>
             <h1>Login</h1>
             <div class="input-box">
-                
-                <input type="text" placeholder="Username" required id="username">
+                <input type="text" placeholder="Username" required id="username" name="username">
                 <i class='bx bxs-user'></i>
             </div>
             <div class="input-box">
-                
-                <input type="password" placeholder="Password" required id="password">
+                <input type="password" placeholder="Password" required id="password" name="password">
                 <i class='bx bxs-lock-alt'></i>
             </div>
-
-          
-            <button type="button" class="btn" onclick="validatesLogin()">Login</button>
-            
+            <button type="submit" class="btn" name="login_user">Login</button>
             <div class="register-link">
                 <p>Don't have an account? <a href="reg.html">Register</a></p>
             </div>
-     
+        </form>
     </div>
     <img src="assets/images/rentrover.png" alt="logo">
-    <script src="assets/js/script.js"></script>
+    
 </body>
 </html>
