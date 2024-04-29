@@ -73,13 +73,13 @@ if (isset($_POST['login_user'])) {
     $password = mysqli_real_escape_string($db, $_POST['password']);
 
     if (empty($username)) {
-        array_push($errors, "Username is required");
+        $_SESSION['error'] = "Username is required";
     }
     if (empty($password)) {
-        array_push($errors, "Password is required");
+        $_SESSION['error'] = "Password is required";
     }
 
-    if (count($errors) == 0) {
+    if (!isset($_SESSION['error'])) {
         $query = "SELECT * FROM users WHERE username='$username'";
         $results = mysqli_query($db, $query);
         if (mysqli_num_rows($results) == 1) {
@@ -88,13 +88,17 @@ if (isset($_POST['login_user'])) {
                 $_SESSION['username'] = $username;
                 $_SESSION['success'] = "You are now logged in";
                 header('location: index.php');
-                exit(); // Add exit to prevent further execution
+                exit();
             } else {
-                array_push($errors, "Wrong username/password combination");
+                $_SESSION['error'] = "Wrong username or password combination";
             }
         } else {
-            array_push($errors, "Wrong username/password combination");
+            $_SESSION['error'] = "Wrong username or password combination";
         }
     }
+
+    // Redirect back to the login page
+    header('location: login.php');
+    exit();
 }
 ?>

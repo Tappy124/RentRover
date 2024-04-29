@@ -1,6 +1,5 @@
 <?php
-// Include the PHP file with database connection and user authentication functions
-require_once("server.php");
+session_start();
 ?>
 
 <!DOCTYPE html>
@@ -11,12 +10,21 @@ require_once("server.php");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Form</title>
     <link rel="stylesheet" href="assets/css/login.css">
+    <script>
+        // JavaScript function to display error message as a popup
+        function showError(message) {
+            alert(message);
+        }
+    </script>
 </head>
 <body>
     
     <div class="container">
         <form action="server.php" method="post">    
-            <?php include('errors.php')?>
+            <?php if(isset($_SESSION['error'])): ?>
+                <script>showError("<?php echo $_SESSION['error']; ?>");</script>
+                <?php unset($_SESSION['error']); ?>
+            <?php endif; ?>
             <h1>Login</h1>
             <div class="input-box">
                 <input type="text" placeholder="Username" required id="username" name="username">
