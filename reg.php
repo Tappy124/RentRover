@@ -1,59 +1,54 @@
-<?php
-// Database connection
-$servername = "localhost"; // Change this to your database server
-$username = "root"; // Change this to your database username
-$password = ""; // Change this to your database password
-$dbname = "carrental"; // Change this to your database name
+<?php include('server.php') ?>
 
-$conn = new mysqli($servername, $username, $password, $dbname);
 
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="assets/css/login.css">
 
-// Retrieve form data
-$firstName = $_POST['firstName'];
-$lastName = $_POST['lastName'];
-$email = $_POST['email'];
-$userName = $_POST['username'];
-$password1 = $_POST['password_1'];
-$password2 = $_POST['password_2'];
+</head>
+<body>
+    <div class="container">
+        <form action="server.php" method="post">
+            <?php include('errors.php'); ?>
+            <h1>Register</h1>
+            
+            <div class="input-box">
+                <input type="text" placeholder="First Name" required name="firstName">
+                <i class='bx bxs-user'></i>
+            </div>
+            <div class="input-box">
+                <input type="text" placeholder="Last Name" required name="lastName">
+                <i class='bx bxs-user'></i>
+            </div>
+            <div class="input-box">
+                <input type="email" name="email" value="" placeholder="Email"><?php echo $email; ?>
 
-// Check if form data is set
-if (!isset($firstName, $lastName, $email, $userName, $password1, $password2)) {
-    die("Error: All form fields must be filled.");
-}
+                <i class='bx bxs-envelope'></i>
+            </div>
+            <div class="input-box">
+                <input type="text" name="username" value="" placeholder="Username"><?php echo $username; ?>
+                <i class='bx bxs-user'></i>
+            </div>
+            <div class="input-box">
+                <input type="password"  name="password_1" placeholder="Password">
 
-// Check if passwords match
-if ($password1 !== $password2) {
-    die("Error: Passwords do not match.");
-}
-
-// Prepare SQL statement to insert data into database
-$sql = "INSERT INTO registration (firstname, lastname, email, username, password_1, password_2) VALUES (?, ?, ?, ?, ?, ?)";
-
-// Prepare and bind parameters
-$stmt = $conn->prepare($sql);
-
-if (!$stmt) {
-    die("Error: " . $conn->error); // Check for errors in prepare statement
-}
-
-$stmt->bind_param("ssssss", $firstName, $lastName, $email, $userName, $password1, $password2);
-
-// Execute the query
-if ($stmt->execute()) {
-    // Redirect to login page
-    header("Location: login.php");
-    exit();
-} else {
-    die("Error: " . $stmt->error);
-}
-
-// Close statement
-$stmt->close();
-
-// Close connection
-$conn->close();
-?>
+                <i class='bx bxs-lock-alt'></i>
+            </div>
+            <div class="input-box">
+                <input type="password" name="password_2" placeholder="Confirm password">
+                <i class='bx bxs-lock-alt'></i>
+            </div>
+            <button type="submit" class="btn" name="reg_user">Sign Up</button>
+            
+            <div class="login-link">
+                <p>Already have an account? <a href="login.html">Login</a></p>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
