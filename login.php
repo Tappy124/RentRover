@@ -36,7 +36,7 @@ session_start();
             </div>
             <button type="submit" class="btn" name="login_user">Login</button>
             <div class="register-link">
-                <p>Don't have an account? <a href="reg.html">Register</a></p>
+                <p>Don't have an account? <a href="reg.php">Register</a></p>
             </div>
         </form>
     </div>
