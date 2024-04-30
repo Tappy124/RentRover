@@ -455,3 +455,15 @@ h3 {
 .resume .func .interests-items div span {
   display: block;
 }
+
+.nav.logout-btn {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.logout-btn:hover {
+    text-decoration: underline;
+}

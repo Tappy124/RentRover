@@ -67,6 +67,11 @@
                 <li class="nav-item"><a class="nav-link" href="about-us.php">About Us</a></li>
                 
                 <li class="nav-item"><a class="nav-link" href="contact.php">Contact Us</a></li>
+                <li class="nav-item">
+                            <form class="nav-link" action="logout.php" method="post">
+                                <button type="submit" class="btn btn-link logout-btn" name="logout">Logout</button>
+                            </form>
+
             </ul>
           </div>
         </div>
@@ -93,12 +98,12 @@
           <div class="col-md-12">
             <div class="section-heading">
               <h2>Offers</h2>
-              <a href="offers.html">view more <i class="fa fa-angle-right"></i></a>
+              <a href="offers.php">view more <i class="fa fa-angle-right"></i></a>
             </div>
           </div>
           <div class="col-md-4">
             <div class="product-item">
-              <a href="offers.html"><img src="assets/images/raize.png" alt=""></a>
+              <a href="offers.php"><img src="assets/images/raize.png" alt=""></a>
               <div class="down-content">
                 <a href="offers.php"><h4>Toyota Raize</h4></a>
                 <h6><small>from</small></small> ₱ 1,590 <small>per day</small></h6>
