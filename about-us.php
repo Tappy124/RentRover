@@ -99,7 +99,7 @@
           </div>
           <div class="col-md-6">
             <div class="right-image">
-              <img src="assets/images/about-1-570x350.jpg" alt="">
+              <img src="assets/images/rentrover.png" alt="">
             </div>
           </div>
           <div class="col-md-6">
@@ -119,23 +119,7 @@
     </div>
 
     
-    <div class="team-members">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="section-heading">
-              <h2>test</h2>
-            </div>
-
-            <h5>test</h5>
-
-            <p>text</p>
-
-            <p>test</p>
-          </div>
-        </div>
-      </div>
-    </div>
+   
 
     <footer>
       <div class="container">

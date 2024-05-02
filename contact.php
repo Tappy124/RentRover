@@ -113,8 +113,8 @@
               <h4>About our office</h4>
               <p>At RentRover, we pride ourselves on being more than just a car rental service; we're your trusted partner for all your transportation needs. Our office is more than just a location—it's the heart of our operations, where exceptional service meets convenience.</p>
               <ul class="social-icons">
-                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="https://www.facebook.com/shuichii01/" target="_blank" ><i class="fa fa-facebook"></i></a></li>
+                <li><a href="https://www.twitter.com/" target="_blank"><i class="fa fa-twitter"></i></a></li>
                
               </ul>
             </div>
@@ -166,10 +166,16 @@
             </div>
           </div>
           <div class="col-md-4">
-            <img src="assets/images/team_01.jpg" class="img-fluid" alt="">
+            
+          <img src="assets/images/tappy.jpg" class="img-fluid" alt="">
 
-            <h5 class="text-center" style="margin-top: 15px;">John Doe</h5>
+            <h5 class="text-center" style="margin-top: 15px;">Ian Christian Tapilot</h5>
+            <img src="assets/images/tappy.jpg" class="img-fluid" alt="">
+
+            <h5 class="text-center" style="margin-top: 15px;">Angel Manatad</h5>
           </div>
+
+          
         </div>
       </div>
     </div>
