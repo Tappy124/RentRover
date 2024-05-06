@@ -153,7 +153,7 @@
           </div>
           <div class="col-md-6">
             <div class="right-image">
-              <img src="assets/images/about-1-570x350.jpg" alt="">
+              <img src="assets/images/rentrover570x370 (2).png" alt="rentroverlogo570x370">
             </div>
           </div>
         </div>
@@ -227,7 +227,7 @@
                 <div class="col-md-8">
                   
                   <h4>"Unlock your next adventure with ease – contact us today and experience the convenience, reliability, and freedom of RentRover's car rental services!"</h4>
-                  <a href="contact.html" class="filled-button">Contact Us</a> 
+                  <a href="contact.php" class="filled-button">Contact Us</a> 
                 </div>
                 <div class="col-lg-4 col-md-6 text-right">
                   

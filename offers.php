@@ -94,26 +94,26 @@
         <div class="row">
           <div class="col-md-4">
             <div class="product-item">
-              <img src="assets/images/offer-1-370x270.jpg" alt="">
+              <img src="assets/images/almera.jpg" alt="almera">
 
               <div class="down-content">
-                <h4>text here</h4>
+                <h4>Nissan Almera</h4>
 
-                <h6><small>from</small> $99 <small>per weekend</small></h6>
+                <h6><small>from</small> ₱ 2,890 <small>per day</small></h6>
 
-                <p>text here</p>
+                <p>The Nissan Almera is a sleek and reliable sedan designed to offer comfort, efficiency, and style. With its spacious interior, advanced technology features, and smooth performance, the Almera provides an enjoyable driving experience for both city commutes and longer journeys.</p>
               </div>
             </div>
           </div>
 
           <div class="col-md-4">
             <div class="product-item">
-              <img src="assets/images/offer-2-370x270.jpg" alt="">
+              <img src="assets/images/wigo.webp" alt="">
 
               <div class="down-content">
-                <h4>text here</h4>
+                <h4>Toyota Wigo</h4>
 
-                <h6><small>from</small> $99 <small>per weekend</small></h6>
+                <h6><small>from</small> price<small></small></h6>
 
                 <p>text</p>
               </div>
@@ -122,7 +122,22 @@
 
           <div class="col-md-4">
             <div class="product-item">
-              <img src="assets/images/offer-3-370x270.jpg" alt="">
+              <img src="assets/images/explorer.jpg" alt="">
+
+              <div class="down-content">
+                <h4>Toyota Wigo</h4>
+
+                <h6><small>from</small> <s>$99</s>
+                 <small>per weekend</small></h6>
+
+                <p>text here</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="product-item">
+              <img src="assets/images/offer-4-370x270." alt="">
 
               <div class="down-content">
                 <h4>text here</h4>
@@ -136,7 +151,7 @@
 
           <div class="col-md-4">
             <div class="product-item">
-              <img src="assets/images/offer-4-370x270.jpg" alt="">
+              <img src="assets/images/offer-5-370x270." alt="">
 
               <div class="down-content">
                 <h4>text here</h4>
@@ -150,26 +165,12 @@
 
           <div class="col-md-4">
             <div class="product-item">
-              <img src="assets/images/offer-5-370x270.jpg" alt="">
+              <img src="assets/images/offer-6-370x270." alt="">
 
               <div class="down-content">
                 <h4>text here</h4>
 
-                <h6><small>from</small> $99 <small>per weekend</small></h6>
-
-                <p>text here</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4">
-            <div class="product-item">
-              <img src="assets/images/offer-6-370x270.jpg" alt="">
-
-              <div class="down-content">
-                <h4>text here</h4>
-
-                <h6><small>from</small> $99 <small>per weekend</small></h6>
+                <h6><small>from</small> $99 <small>price</small></h6>
 
                 <p>text here</p>
               </div>
@@ -178,8 +179,8 @@
 
           <div class="col-md-12">
             <ul class="pages">
-              <li><a href="#">1</a></li>
-              <li class="active"><a href="#">2</a></li>
+              <li class="active"><a href="#">1</a></li>
+              <li ><a href="#">2</a></li>
               <li><a href="#">3</a></li>
               <li><a href="#">4</a></li>
               <li><a href="#"><i class="fa fa-angle-double-right"></i></a></li>

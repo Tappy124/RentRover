@@ -94,12 +94,12 @@
           <div class="col-md-4">
             <div class="team-member">
               <div class="thumb-container">
-                <img src="assets/images/team_01.jpg" alt="">
+                <img src="assets/images/tappy.jpg" alt="">
                 <div class="hover-effect">
                   <div class="hover-content">
                     <ul class="social-icons">
-                      <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                      <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                      <li><a href="https://www.facebook.com/shuichii01/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                      <li><a href="https://www.twitter.com/" target="_blank"><i class="fa fa-twitter"></i></a></li>
                     
                     </ul>
                   </div>
@@ -115,7 +115,7 @@
           <div class="col-md-4">
             <div class="team-member">
               <div class="thumb-container">
-                <img src="assets/images/team_02.jpg" alt="">
+                <img src="assets/images/team_02." alt="">
                 <div class="hover-effect">
                   <div class="hover-content">
                     <ul class="social-icons">

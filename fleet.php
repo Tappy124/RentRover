@@ -89,7 +89,7 @@
       </div>
     </div>
     <section>
-    <input type="text" placeholder="Search here" id="search-item" onkeyup="search()">
+    <input class="search-box" type="text" placeholder="Search here" id="search-item" onkeyup="search()">
 
     <div class="filter">
     <label><input type="checkbox" id="filter-sedan" onchange="filterProducts()"> Sedan</label>
@@ -350,13 +350,13 @@
 
           <div class="col-md-4">
             <div class="product-item">
-              <img src="assets/images/product-4-370x270.jpg" alt="">
+              <img src="assets/images/product-4-370x270." alt="">
 
               <div class="down-content">
-                <h4>Large: Premium</h4>
+                <h4></h4>
                 <p class="type">SUV</p>
 
-                <h6><small>from</small> $99 <small>per weekend</small></h6> 
+                <h6><small>from</small> $99 <small>per</small></h6> 
 
                 <p>text here</p>
 
@@ -376,13 +376,13 @@
 
           <div class="col-md-4">
             <div class="product-item">
-              <img src="assets/images/product-5-370x270.jpg" alt="">
+              <img src="assets/images/product-5-370x270." alt="">
 
               <div class="down-content">
-                <h4>Large: Premium</h4>
+                <h4></h4>
                 <p class="type">Sports</p>
 
-                <h6><small>from</small> $99 <small>per weekend</small></h6>
+                <h6><small>from</small> price <small></small></h6>
 
                 <p>text here</p>
 
@@ -402,13 +402,13 @@
 
           <div class="col-md-4">
             <div class="product-item">
-              <img src="assets/images/product-6-370x270.jpg" alt="">
+              <img src="assets/images/product-6-370x270." alt="">
 
               <div class="down-content">
-                <h4>Large: Premium</h4>
+                <h4></h4>
                 <p class="type">Sedan</p>
 
-                <h6><small>from</small> $99 <small>per weekend</small></h6>
+                <h6><small>from</small> price: <small></small></h6>
 
                 <p>text</p>
 
@@ -470,7 +470,7 @@
             </div>
             <div class="modal-body">
                 <div class="contact-form">
-                    <form action="booking.php" method="post">
+                    <form action="booking.php" method="post" enctype="multipart/form-data">
                         <div class="row">
                             <div class="col-md-6">
                                 <fieldset>
@@ -509,15 +509,15 @@
                             </div>
                             <div class="col-md-6">
                                 <fieldset>
-                                    <label for="fileToUpload">Upload Photo of driver's license:</label>
-                                    <input type="file" name="fileToUpload" id="fileToUpload">
+                                    <label for="fileToUpload" >Upload Photo of driver's license:</label>
+                                    <input type="file"  id="dlpic" name="dlpic">
                                 </fieldset>
                             </div>
                         </div>
                         <!-- Move the button inside the form -->
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                            <button type="submit" class="btn btn-primary">Book Now</button>
+                            <button type="submit" class="btn btn-primary" onclick="book()">Book Now</button>
                         </div>
                     </form>
                 </div>
@@ -537,6 +537,7 @@
     <!-- Additional Scripts -->
     <script src="assets/js/custom.js"></script>
     <script src="assets/js/owl.js"></script>
+    <script src="assets/js/script.js"></script>
     <script src="assets/js/search.js"></script>
   </body>
 

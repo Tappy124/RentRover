@@ -99,7 +99,7 @@
           </div>
           <div class="col-md-6">
             <div class="right-image">
-              <img src="assets/images/rentrover.png" alt="">
+              <img src="assets/images/rentrover570x370 (2).png" alt="">
             </div>
           </div>
           <div class="col-md-6">

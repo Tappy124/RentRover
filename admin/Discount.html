@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Admin Panel</title>
+</head>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    height: 500px;
+    margin: 50px 200px 50px 100px; /* Center the container horizontally and move it to the left */
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+h1, h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.promo-codes {
+    margin-bottom: 20px;
+}
+
+.promo-code {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.promo-code p {
+    margin: 0;
+}
+
+.promo-code .code {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.delete-btn {
+    background-color: #ff6464;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.delete-btn:hover {
+    background-color: #ff4646;
+}
+
+.add-promo-code form {
+    display: flex;
+    flex-direction: column;
+}
+
+.add-promo-code input {
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.add-promo-code button {
+    padding: 10px;
+    background-color: #3563E9;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.add-promo-code button:hover {
+    background-color: #2446b9;
+}
+
+</style>
+<body>
+    <div class="side-menu">
+        <div class="car rental">
+            <img src="rentrover.png" alt="Brand Logo" width="250" height="150">
+        </div>
+        <ul>
+            <li><a href="index.html"><span><i class="fas fa-home"></i> Dashboard</span></a></li>
+            <li><a href="reservation.html"><span><i class="fas fa-book"></i> Reservations</span></a></li>
+            <li><a href="Vehicles.html"><span><i class="fas fa-car"></i> Vehicles</span></a></li>
+            <li><a href="Customers.html"><span><i class="fas fa-users"></i> Customers</span></a></li>
+            <li><a href="Discount.html"><span><i class="fas fa-tag"></i> Discount</span></a></li>
+        </ul>
+        <div class="logout-btn"><i class="fas fa-sign-out-alt"></i>Logout</div>
+    </div>
+    <div class="container">
+        <h1>Promo Codes</h1>
+        <div class="promo-codes">
+            <div class="promo-code">
+                <p class="code">SUMMER50</p>
+                <p class="description">Get 50% off on summer collection</p>
+                <button class="delete-btn">Delete</button>
+            </div>
+            <div class="promo-code">
+                <p class="code">WEEKEND10</p>
+                <p class="description">Receive a 10% discount on weekend car rentals.</p>
+                <button class="delete-btn">Delete</button>
+            </div>
+            <!-- Add more promo codes here -->
+        </div>
+        <div class="add-promo-code">
+            <h2>Add New Promo Code</h2>
+            <form>
+                <input type="text" name="code" placeholder="Promo Code" required>
+                <input type="text" name="description" placeholder="Description" required>
+                <button type="submit">Add Promo Code</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

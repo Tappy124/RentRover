@@ -72,33 +72,38 @@ if (isset($_POST['login_user'])) {
     $username = mysqli_real_escape_string($db, $_POST['username']);
     $password = mysqli_real_escape_string($db, $_POST['password']);
 
-    if (empty($username)) {
-        $_SESSION['error'] = "Username is required";
-    }
-    if (empty($password)) {
-        $_SESSION['error'] = "Password is required";
+    if (empty($username) || empty($password)) {
+        $_SESSION['error'] = "Username and password are required";
+        header('location: login.php');
+        exit();
     }
 
-    if (!isset($_SESSION['error'])) {
-        $query = "SELECT * FROM users WHERE username='$username'";
-        $results = mysqli_query($db, $query);
-        if (mysqli_num_rows($results) == 1) {
-            $user = mysqli_fetch_assoc($results);
-            if (password_verify($password, $user['password'])) {
-                $_SESSION['username'] = $username;
-                $_SESSION['success'] = "You are now logged in";
-                header('location: index.php');
-                exit();
-            } else {
-                $_SESSION['error'] = "Wrong username or password combination";
-            }
+    $query = "SELECT * FROM users WHERE username='$username'";
+    $result = mysqli_query($db, $query);
+
+    if (!$result || mysqli_num_rows($result) == 0) {
+        $_SESSION['error'] = "Username not found";
+        header('location: login.php');
+        exit();
+    }
+
+    $user = mysqli_fetch_assoc($result);
+    
+    if (password_verify($password, $user['password'])) {
+        $_SESSION['username'] = $username;
+        $_SESSION['success'] = "You are now logged in";
+
+        if ($user['isAdmin'] == 1) {
+            header('location: admin/index.html');
+            exit();
         } else {
-            $_SESSION['error'] = "Wrong username or password combination";
+            header('location: index.php');
+            exit();
         }
+    } else {
+        $_SESSION['error'] = "Incorrect password";
+        header('location: login.php');
+        exit();
     }
-
-    // Redirect back to the login page
-    header('location: login.php');
-    exit();
 }
 ?>

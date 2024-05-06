@@ -133,7 +133,7 @@
                 <i class="fa fa-user"></i>
               </div>
               <div class="down-content">
-                <h4>John Doe</h4>
+                <h4>Ian Tapilot</h4>
                 <p class="n-m"><em>"I had a fantastic experience with RentRover's customer service team. They were responsive, helpful, and went above and beyond to assist me with my rental. Whether I had questions about the booking process or needed to make changes to my reservation, they were always there to provide assistance promptly. Their dedication to customer satisfaction sets them apart from other rental companies."</em></p>
               </div>
             </div>
@@ -144,7 +144,7 @@
                 <i class="fa fa-user"></i>
               </div>
               <div class="down-content">
-                <h4>Jane Smith</h4>
+                <h4>Tappy</h4>
                 <p class="n-m"><em>"The car I rented from RentRover was in pristine condition, inside and out. It was evident that they take pride in maintaining their fleet to high standards. The vehicle was clean, comfortable, and performed flawlessly throughout my rental period. I felt safe and confident driving it, knowing that it had been well cared for."</em></p>
               </div>
             </div>
@@ -155,7 +155,7 @@
                 <i class="fa fa-user"></i>
               </div>
               <div class="down-content">
-                <h4>Antony Davis</h4>
+                <h4>Ska Sanchez</h4>
                 <p class="n-m"><em>"RentRover's online platform is user-friendly and intuitive, making the entire rental process a breeze. From browsing available vehicles to completing the payment, everything was straightforward and efficient. I appreciated the convenience of managing my reservation online and receiving all the necessary details via email. RentRover definitely sets the bar high for online car rental services."</em></p>
               </div>
             </div>

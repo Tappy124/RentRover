@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Admin Panel</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<style>
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background-color: #f1f1f1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    max-width: 800px;
+    padding: 20px;
+}
+
+.add-car-form {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.add-car-form h2 {
+    margin-bottom: 20px;
+}
+
+.add-car-form label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.add-car-form input[type="text"],
+.add-car-form input[type="number"],
+.add-car-form select,
+.add-car-form button,
+.add-car-form input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.add-car-form button {
+    background-color: #3563E9;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.add-car-form button:hover {
+    background-color: #2446b9;
+}
+
+
+</style>
+<body>
+    <div class="container">
+        <div class="content">
+            <div class="add-car-form">
+                <h2>Add New Car</h2>
+                <form action="#" method="POST" enctype="multipart/form-data">
+                    <label for="car-model">Car Model:</label>
+                    <select id="car-model" name="car-model" required>
+                        <option value="SUV">SUV</option>
+                        <option value="Sedan">Van</option>
+                        <option value="Hatchback">Hatchback</option>
+                    </select>
+
+                    <label for="car-type">Car Type:</label>
+                    <select id="car-type" name="car-type" required>
+                        <option value="Toyota">Toyota</option>
+                        <option value="Honda">Hyundai</option>
+                        <option value="Ford">Ford</option>
+                    </select>
+
+                    <label for="car-year">Manufacturing Year:</label>
+                    <input type="number" id="car-year" name="car-year" min="2000" max="2099" required>
+
+                    <label for="car-color">Car Color:</label>
+                    <input type="text" id="car-color" name="car-color" required>
+
+                    <label for="car-price">Price per Day ($):</label>
+                    <input type="number" id="car-price" name="car-price" min="1000" required>
+
+                    <label for="car-image">Upload Image:</label>
+                    <input type="file" id="car-image" name="car-image" accept="image/*" required>
+
+                    <button type="submit">Add Car</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
