@@ -62,7 +62,7 @@ if ($stmt->execute()) {
     // Close connection
     $conn->close();
     // Redirect back to fleet page
-    header("Location: fleet.php");
+    header("Location: thankyou.php");
     exit(); // Make sure no other code is executed after redirection
 } else {
     echo "Error: " . $stmt->error; // Use $stmt->error instead of $conn->error
