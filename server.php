@@ -31,6 +31,7 @@ if (isset($_POST['reg_user'])) {
         array_push($errors, "The two passwords do not match");
     }
 
+    
     // first check the database to make sure 
     // a user does not already exist with the same username and/or email
     $user_check_query = "SELECT * FROM users WHERE username='$username' OR email='$email' LIMIT 1";
@@ -94,7 +95,7 @@ if (isset($_POST['login_user'])) {
         $_SESSION['success'] = "You are now logged in";
 
         if ($user['isAdmin'] == 1) {
-            header('location: admin/index.html');
+            header('location: admin.php');
             exit();
         } else {
             header('location: index.php');

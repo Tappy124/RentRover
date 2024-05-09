@@ -1,136 +1,110 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Admin</title>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-       <link rel="stylesheet" href="./assets/css/admin.css"></link>
-  </head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Admin Panel</title>
 </head>
-<body >
-    
-        <?php
-            include "./adminHeader.php";
-            include "./sidebar.php";
-           
-            include_once "./config/dbconnect.php";
-        ?>
+<body>
+    <div class="side-menu">
+        <div class="car rental">
+            <img src="assets/images/rentrover.png" alt="Brand Logo" width="250" height="250">
+        </div>
+        <ul>
+            <li><a href="admin.php"><span><i class="fas fa-home"></i> Dashboard</span></a></li>
+            <li><a href="reservation.php"><span><i class="fas fa-book"></i> Reservations</span></a></li>
+            <li><a href="cars.php"><span><i class="fas fa-car"></i> Vehicles</span></a></li>
+            <li><a href="users.php"><span><i class="fas fa-users"></i> Customers</span></a></li>
+            <li><a href="discount.php"><span><i class="fas fa-tag"></i> Discount</span></a></li>
+            <form class="nav-link" action="logout.php" method="post">
+                <button type="submit" class="btn btn-link logout-btn" name="logout">Logout</button>
+            </form>
+        </ul>
+        
+    </div>
+    <div class="container">
+        <div class="header">
+            <div class="nav">
+            </div>
+        </div>
+        <div class="content">
+            <div class="cards">
+                <div class="card">
+                    <div class="box">
+                        <h1>2194</h1>
+                        <h3>Total Revenue</h3>
+                    </div>
+                    <div class="icon-case">
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="box">
+                    <h2><?php
+// Connect to the database
+                        $db = mysqli_connect('localhost', 'root', '', 'carrental');
 
-    <div id="main-content" class="container allContent-section py-4">
-        <div class="row">
-            <div class="col-sm-3">
-                <div class="card">
-                    <i class="fa fa-users  mb-2" style="font-size: 70px;"></i>
-                    <h4 style="color:white;">Total Users</h4>
-                    <h5 style="color:white;">
-                    <?php
-                        $sql="SELECT * from users where isAdmin=0";
-                        $result=$conn-> query($sql);
-                        $count=0;
-                        if ($result-> num_rows > 0){
-                            while ($row=$result-> fetch_assoc()) {
-                    
-                                $count=$count+1;
+// Check connection
+                    if (!$db) {
+                        die("Connection failed: " . mysqli_connect_error());
                             }
-                        }
-                        echo $count;
-                    ?></h5>
+
+// Fetch count of available cars from the database
+                    $query = "SELECT COUNT(available) AS available_cars FROM cars ";
+                    $result = mysqli_query($db, $query);
+
+// Check if query was successful
+            if ($result) {
+    // Fetch the count
+                $row = mysqli_fetch_assoc($result);
+                $available_cars = $row['available_cars'];
+
+    // Output the count
+                 echo "<td>".$available_cars."</td>";
+                    } else {
+                echo "<td>Error: " . mysqli_error($db) . "</td>";
+                }
+                    ?></h2>
+                    <h3>Available Cars</h3>
+
+                    </div>
+                    <div class="icon-case">
+                    </div>
                 </div>
-            </div>
-            <div class="col-sm-3">
                 <div class="card">
-                    <i class="fa fa-th-large mb-2" style="font-size: 70px;"></i>
-                    <h4 style="color:white;">Total Categories</h4>
-                    <h5 style="color:white;">
-                    <?php
-                       
-                       $sql="SELECT * from category";
-                       $result=$conn-> query($sql);
-                       $count=0;
-                       if ($result-> num_rows > 0){
-                           while ($row=$result-> fetch_assoc()) {
-                   
-                               $count=$count+1;
-                           }
-                       }
-                       echo $count;
-                   ?>
-                   </h5>
+                    <div class="box">
+                        <h1>5</h1>
+                        <h3>Canceled</h3>
+                    </div>
+                    <div class="icon-case">
+                    </div>
                 </div>
             </div>
-            <div class="col-sm-3">
-            <div class="card">
-                    <i class="fa fa-th mb-2" style="font-size: 70px;"></i>
-                    <h4 style="color:white;">Total Products</h4>
-                    <h5 style="color:white;">
-                    <?php
-                       
-                       $sql="SELECT * from product";
-                       $result=$conn-> query($sql);
-                       $count=0;
-                       if ($result-> num_rows > 0){
-                           while ($row=$result-> fetch_assoc()) {
-                   
-                               $count=$count+1;
-                           }
-                       }
-                       echo $count;
-                   ?>
-                   </h5>
-                </div>
-            </div>
-            <div class="col-sm-3">
-                <div class="card">
-                    <i class="fa fa-list mb-2" style="font-size: 70px;"></i>
-                    <h4 style="color:white;">Total orders</h4>
-                    <h5 style="color:white;">
-                    <?php
-                       
-                       $sql="SELECT * from orders";
-                       $result=$conn-> query($sql);
-                       $count=0;
-                       if ($result-> num_rows > 0){
-                           while ($row=$result-> fetch_assoc()) {
-                   
-                               $count=$count+1;
-                           }
-                       }
-                       echo $count;
-                   ?>
-                   </h5>
+            <div class="content-2">
+                <div class="recent-payments">
+                    <div class="title">
+                        <h2>Recent Payments</h2>
+                        <a href="#" class="btn">View All</a>
+                    </div>
+                    <table>
+                        <tr>
+                            <th>Customer</th>
+                            <th>Pickup</th>
+                            <th>Drop-off</th>
+                            <th>Days</th>
+                        </tr>
+                        <tr>
+                            <td>John Doe</td>
+                            <td>Ayala Central Bloc</td>
+                            <td>Sm Seaside</td>
+                            <td>7 days</td>
+                        </tr>
+                    </table>
                 </div>
             </div>
         </div>
-        
     </div>
-       
-            
-        <?php
-            if (isset($_GET['category']) && $_GET['category'] == "success") {
-                echo '<script> alert("Category Successfully Added")</script>';
-            }else if (isset($_GET['category']) && $_GET['category'] == "error") {
-                echo '<script> alert("Adding Unsuccess")</script>';
-            }
-            if (isset($_GET['size']) && $_GET['size'] == "success") {
-                echo '<script> alert("Size Successfully Added")</script>';
-            }else if (isset($_GET['size']) && $_GET['size'] == "error") {
-                echo '<script> alert("Adding Unsuccess")</script>';
-            }
-            if (isset($_GET['variation']) && $_GET['variation'] == "success") {
-                echo '<script> alert("Variation Successfully Added")</script>';
-            }else if (isset($_GET['variation']) && $_GET['variation'] == "error") {
-                echo '<script> alert("Adding Unsuccess")</script>';
-            }
-        ?>
-
-
-    <script type="text/javascript" src="./assets/js/ajaxWork.js"></script>    
-    <script type="text/javascript" src="./assets/js/script.js"></script>
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js" ></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" ></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
 </body>
- 
 </html>

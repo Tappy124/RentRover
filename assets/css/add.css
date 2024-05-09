@@ -1,0 +1,60 @@
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background-color: #f1f1f1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    max-width: 800px;
+    padding: 20px;
+}
+
+.add-car-form {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.add-car-form h2 {
+    margin-bottom: 20px;
+}
+
+.add-car-form label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.add-car-form input[type="text"],
+.add-car-form input[type="number"],
+.add-car-form select,
+.add-car-form button,
+.add-car-form input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.add-car-form button {
+    background-color: #3563E9;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.add-car-form button:hover {
+    background-color: #2446b9;
+}
+
+
