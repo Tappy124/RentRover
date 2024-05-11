@@ -1,9 +1,9 @@
 <?php
 // Database connection
-$servername = "localhost"; // Change this to your database server
-$username = "root"; // Change this to your database username
-$password = ""; // Change this to your database password
-$dbname = "carrental"; // Change this to your database name
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "carrental";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -20,31 +20,68 @@ $returndt = $_POST['returndt'];
 $fullname = $_POST['fullName'];
 $email = $_POST['email'];
 $phone = $_POST['phone'];
+$discount_code = $_POST['discount_code'];
 
 // File upload
-$target_dir = "uploads/";
+$target_dir = "uploads/DLpics";
 if (!file_exists($target_dir)) {
     mkdir($target_dir, 0755, true); // creates the directory recursively
 }
 
 // Check if image file is uploaded
 if(isset($_FILES["dlpic"]["tmp_name"]) && $_FILES["dlpic"]["tmp_name"] != "") {
+    $target_dir = "uploads/DLpics"; // Your target directory
     $target_file = $target_dir . basename($_FILES["dlpic"]["name"]);
-    $check = getimagesize($_FILES["dlpic"]["tmp_name"]);
-    if($check !== false) {
-        move_uploaded_file($_FILES["dlpic"]["tmp_name"], $target_file);
-        echo "File is an image - " . $check["mime"] . ".";
-    } else {
-        echo "File is not an image.";
-        exit();
-    }
+    move_uploaded_file($_FILES["dlpic"]["tmp_name"], $target_file);
+    echo "File uploaded successfully.";
 } else {
     echo "No file uploaded.";
     exit();
 }
 
+
+// Function to generate random transaction ID
+function generateTransactionID($length = 6) {
+    $characters = '0123456789';
+    $transactionID = '';
+    for ($i = 0; $i < $length; $i++) {
+        $transactionID .= $characters[rand(0, strlen($characters) - 1)];
+    }
+    return $transactionID;
+}
+
+$transactionID = generateTransactionID();
+
+// Check if discount code is provided
+if(isset($_POST["discount_code"]) && $_POST["discount_code"] != "") {
+    // Sanitize the discount code input
+    $discount_code = mysqli_real_escape_string($conn, $_POST["discount_code"]);
+
+    // Query to check if the discount code exists
+    $sql = "SELECT * FROM discounts WHERE discount_code = '$discount_code'";
+    $result = mysqli_query($conn, $sql);
+
+    if ($result) {
+        // Check if any row is returned
+        if(mysqli_num_rows($result) > 0) {
+            // Discount code exists, do something
+            // Fetch the discount details if needed
+            $discount_row = mysqli_fetch_assoc($result);
+            // Proceed with the booking process
+        } else {
+            // Discount code does not exist
+            echo "Invalid discount code";
+            exit();
+        }
+    } else {
+        // Error occurred during query execution
+        echo "Error: " . mysqli_error($conn);
+        exit();
+    }
+}
+
 // Prepare SQL statement to insert data into database
-$sql = "INSERT INTO booking (pickuploc, returnloc, pickupdt, returndt, fullname, email, phone, dlpic) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+$sql = "INSERT INTO booking (pickuploc, returnloc, pickupdt, returndt, fullname, email, phone, dlpic, transaction_id, discount_code_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
 // Prepare and bind parameters
 $stmt = $conn->prepare($sql);
@@ -53,7 +90,7 @@ if (!$stmt) {
     die("Error: " . $conn->error); // Check for errors in prepare statement
 }
 
-$stmt->bind_param("ssssssis", $pickuploc, $returnloc, $pickupdt, $returndt, $fullname, $email, $phone, $target_file);
+$stmt->bind_param("ssssssissi", $pickuploc, $returnloc, $pickupdt, $returndt, $fullname, $email, $phone, $target_file, $transaction_id, $discount_code_id);
 
 // Execute the query
 if ($stmt->execute()) {
@@ -61,8 +98,8 @@ if ($stmt->execute()) {
     $stmt->close();
     // Close connection
     $conn->close();
-    // Redirect back to fleet page
-    header("Location: thankyou.php");
+    // Redirect to thank you page with transaction ID
+    header("Location: thankyou.php?transaction_id=$transaction_id");
     exit(); // Make sure no other code is executed after redirection
 } else {
     echo "Error: " . $stmt->error; // Use $stmt->error instead of $conn->error

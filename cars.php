@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <title>Admin Panel</title>
 </head>
@@ -15,10 +15,10 @@
         </div>
         <ul>
             <li><a href="admin.php"><span><i class="fas fa-home"></i> Dashboard</span></a></li>
-            <li><a href="reservation.php"><span><i class="fas fa-book"></i> Reservations</span></a></li>
-            <li><a href="cars.php"><span><i class="fas fa-car"></i> Vehicles</span></a></li>
-            <li><a href="users.php"><span><i class="fas fa-users"></i> Customers</span></a></li>
-            <li><a href="discount.php"><span><i class="fas fa-tag"></i> Discount</span></a></li>
+            <li><a href="bookings.php"><span><i class="fas fa-book"></i> Bookings</span></a></li>
+            <li><a href="cars.php"><span><i class="fas fa-car"></i> Cars</span></a></li>
+            <li><a href="users.php"><span><i class="fas fa-users"></i> Users</span></a></li>
+            <li><a href="code.php"><span><i class="fas fa-tag"></i> Promo Codes</span></a></li>
             <form class="nav-link" action="logout.php" method="post">
                 <button type="submit" class="btn btn-link logout-btn" name="logout">Logout</button>
             </form>

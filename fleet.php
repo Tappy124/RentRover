@@ -461,16 +461,16 @@
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Book Now</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="contact-form">
-                    <form action="booking.php" method="post" enctype="multipart/form-data">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Book Now</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+                  <div class="modal-body">
+                   <div class="contact-form">
+                   <form id="bookingForm" method="post" enctype="multipart/form-data">
                         <div class="row">
                             <div class="col-md-6">
                                 <fieldset>
@@ -509,6 +509,12 @@
                             </div>
                             <div class="col-md-6">
                                 <fieldset>
+                                <label for="discount_code">Discount Code:</label>
+                                <input type="text" id="discount_code" name="discount_code">
+                                </fieldset>
+                            </div>
+                            <div class="col-md-6">
+                                <fieldset>
                                     <label for="fileToUpload" >Upload Photo of driver's license:</label>
                                     <input type="file"  id="dlpic" name="dlpic">
                                 </fieldset>
@@ -516,8 +522,8 @@
                         </div>
                         <!-- Move the button inside the form -->
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                            <button type="submit" class="btn btn-primary" onclick="book()">Book Now</button>
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                              <button type="submit" class="btn btn-primary" onclick="book()">Book Now</button>
                         </div>
                     </form>
                 </div>
@@ -538,7 +544,7 @@
     <script src="assets/js/custom.js"></script>
     <script src="assets/js/owl.js"></script>
     <script src="assets/js/script.js"></script>
-    <script src="assets/js/search.js"></script>
+    <script src="assets/js/booking.js"></script>
   </body>
 
 </html>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <title>Admin Panel</title>
 </head>
@@ -15,10 +15,10 @@
         </div>
         <ul>
             <li><a href="admin.php"><span><i class="fas fa-home"></i> Dashboard</span></a></li>
-            <li><a href="reservation.php"><span><i class="fas fa-book"></i> Reservations</span></a></li>
-            <li><a href="cars.php"><span><i class="fas fa-car"></i> Vehicles</span></a></li>
-            <li><a href="users.php"><span><i class="fas fa-users"></i> Customers</span></a></li>
-            <li><a href="discount.php"><span><i class="fas fa-tag"></i> Discount</span></a></li>
+            <li><a href="bookings.php"><span><i class="fas fa-book"></i> Bookings</span></a></li>
+            <li><a href="cars.php"><span><i class="fas fa-car"></i> Cars</span></a></li>
+            <li><a href="users.php"><span><i class="fas fa-users"></i> Users</span></a></li>
+            <li><a href="code.php"><span><i class="fas fa-tag"></i> Promo Codes</span></a></li>
             <form class="nav-link" action="logout.php" method="post">
                 <button type="submit" class="btn btn-link logout-btn" name="logout">Logout</button>
             </form>
@@ -34,73 +34,110 @@
             <div class="cards">
                 <div class="card">
                     <div class="box">
-                        <h1>2194</h1>
-                        <h3>Total Revenue</h3>
-                    </div>
-                    <div class="icon-case">
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="box">
-                    <h2><?php
-// Connect to the database
+                        <h2><?php
+                        // Connect to the database
                         $db = mysqli_connect('localhost', 'root', '', 'carrental');
 
-// Check connection
-                    if (!$db) {
-                        die("Connection failed: " . mysqli_connect_error());
-                            }
+                        // Check connection
+                        if (!$db) {
+                            die("Connection failed: " . mysqli_connect_error());
+                        }
 
-// Fetch count of available cars from the database
-                    $query = "SELECT COUNT(available) AS available_cars FROM cars ";
-                    $result = mysqli_query($db, $query);
+                        // Fetch count of available cars from the database
+                        $query = "SELECT COUNT(id) AS users FROM users ";
+                        $result = mysqli_query($db, $query);
 
-// Check if query was successful
-            if ($result) {
-    // Fetch the count
-                $row = mysqli_fetch_assoc($result);
-                $available_cars = $row['available_cars'];
+                        // Check if query was successful
+                        if ($result) {
+                            // Fetch the count
+                            $row = mysqli_fetch_assoc($result);
+                            $users = $row['users'];
 
-    // Output the count
-                 echo "<td>".$available_cars."</td>";
-                    } else {
-                echo "<td>Error: " . mysqli_error($db) . "</td>";
-                }
-                    ?></h2>
-                    <h3>Available Cars</h3>
-
+                            // Output the count
+                            echo "<td>".$users."</td>";
+                        } else {
+                            echo "<td>Error: " . mysqli_error($db) . "</td>";
+                        }
+                        ?></h2>
+                        <h4>Users</h4>
                     </div>
                     <div class="icon-case">
                     </div>
                 </div>
                 <div class="card">
                     <div class="box">
-                        <h1>5</h1>
-                        <h3>Canceled</h3>
+                        <h2><?php
+                        // Fetch count of available cars from the database
+                        $query = "SELECT SUM(available) AS available_cars FROM cars ";
+                        $result = mysqli_query($db, $query);
+
+                        // Check if query was successful
+                        if ($result) {
+                            // Fetch the count
+                            $row = mysqli_fetch_assoc($result);
+                            $available_cars = $row['available_cars'];
+
+                            // Output the count
+                            echo "<td>".$available_cars."</td>";
+                        } else {
+                            echo "<td>Error: " . mysqli_error($db) . "</td>";
+                        }
+                        ?></h2>
+                        <h3>Available Cars</h3>
+
                     </div>
                     <div class="icon-case">
                     </div>
                 </div>
+                
             </div>
             <div class="content-2">
                 <div class="recent-payments">
                     <div class="title">
-                        <h2>Recent Payments</h2>
-                        <a href="#" class="btn">View All</a>
+                        <?php
+                        // Fetch count of available cars from the database
+                        $query = "SELECT id, pickuploc, returnloc, pickupdt, returndt, fullname, status FROM booking LIMIT 5 ";
+                        $result = mysqli_query($db, $query);
+
+                        if (!$result) {
+                            die("Query failed: " . mysqli_error($db));
+                        }
+                        ?>
+                        <h2>Recent Bookings</h2>
+                        <a href="" class="btn">View All</a>
                     </div>
                     <table>
                         <tr>
-                            <th>Customer</th>
-                            <th>Pickup</th>
-                            <th>Drop-off</th>
-                            <th>Days</th>
+                            <th>ID</th>
+                            <th>Pickup Location</th>
+                            <th>Return Location</th>
+                            <th>Pickup DateTime</th>
+                            <th>Return DateTime</th>
+                            <th>Full Name</th>
+                            <th>Status</th>
+                            <th>Action</th>
                         </tr>
-                        <tr>
-                            <td>John Doe</td>
-                            <td>Ayala Central Bloc</td>
-                            <td>Sm Seaside</td>
-                            <td>7 days</td>
-                        </tr>
+                        <?php while ($row = mysqli_fetch_assoc($result)) { ?>
+                            <tr>
+                                <td><?php echo $row['id']; ?></td>
+                                <td><?php echo $row['pickuploc']; ?></td>
+                                <td><?php echo $row['returnloc']; ?></td>
+                                <td><?php echo $row['pickupdt']; ?></td>
+                                <td><?php echo $row['returndt']; ?></td>
+                                <td><?php echo $row['fullname']; ?></td>
+                                <td><?php echo $row['status']; ?></td>
+                                <td>
+                                    <form action="update.php" method="post">    
+                                        <input type="hidden" name="booking_id" value="<?php echo $row['id']; ?>">
+                                        <select name="status">
+                                            <option value="approved">Approve</option>
+                                            <option value="declined">Decline</option>
+                                        </select>
+                                        <button type="submit">Submit</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        <?php } ?>
                     </table>
                 </div>
             </div>
