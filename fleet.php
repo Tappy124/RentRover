@@ -48,12 +48,11 @@
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
                     <a class="nav-link" href="index.php">Home
-                      
+                      <span class="sr-only">(current)</span>
                     </a>
                 </li> 
 
                 <li class="nav-item"><a class="nav-link" href="fleet.php">Cars</a></li>
-                <span class="sr-only">(current)</span>
                 <li class="nav-item"><a class="nav-link" href="offers.php">Offers</a></li>
 
                 <li class="nav-item dropdown">
@@ -69,6 +68,11 @@
                 <li class="nav-item"><a class="nav-link" href="about-us.php">About Us</a></li>
                 
                 <li class="nav-item"><a class="nav-link" href="contact.php">Contact Us</a></li>
+                <li class="nav-item">
+                            <form class="nav-link" action="logout.php" method="post">
+                                <button type="submit" class="btn btn-link logout-btn" name="logout">Logout</button>
+                            </form>
+
             </ul>
           </div>
         </div>
@@ -436,6 +440,7 @@
               <li><a href="fleet2.php"><i class="fa fa-angle-double-right"></i></a></li>
             </ul>
           </div>
+         
         </div>
       </div>
     </div>
@@ -509,8 +514,8 @@
                             </div>
                             <div class="col-md-6">
                                 <fieldset>
-                                <label for="discount_code">Discount Code:</label>
-                                <input type="text" id="discount_code" name="discount_code">
+                                <label for="code">Discount Code:</label>
+                                <input type="text" id="code" name="code">
                                 </fieldset>
                             </div>
                             <div class="col-md-6">
@@ -545,6 +550,7 @@
     <script src="assets/js/owl.js"></script>
     <script src="assets/js/script.js"></script>
     <script src="assets/js/booking.js"></script>
+    <script src="assets/js/search.js"></script>
   </body>
 
 </html>

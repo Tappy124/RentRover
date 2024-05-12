@@ -104,7 +104,7 @@
                         }
                         ?>
                         <h2>Recent Bookings</h2>
-                        <a href="" class="btn">View All</a>
+                        <a href="bookings.php" class="btn">View All</a>
                     </div>
                     <table>
                         <tr>

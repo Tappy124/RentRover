@@ -20,45 +20,15 @@ $returndt = $_POST['returndt'];
 $fullname = $_POST['fullName'];
 $email = $_POST['email'];
 $phone = $_POST['phone'];
-$discount_code = $_POST['discount_code'];
-
-// File upload
-$target_dir = "uploads/DLpics";
-if (!file_exists($target_dir)) {
-    mkdir($target_dir, 0755, true); // creates the directory recursively
-}
-
-// Check if image file is uploaded
-if(isset($_FILES["dlpic"]["tmp_name"]) && $_FILES["dlpic"]["tmp_name"] != "") {
-    $target_dir = "uploads/DLpics"; // Your target directory
-    $target_file = $target_dir . basename($_FILES["dlpic"]["name"]);
-    move_uploaded_file($_FILES["dlpic"]["tmp_name"], $target_file);
-    echo "File uploaded successfully.";
-} else {
-    echo "No file uploaded.";
-    exit();
-}
-
-
-// Function to generate random transaction ID
-function generateTransactionID($length = 6) {
-    $characters = '0123456789';
-    $transactionID = '';
-    for ($i = 0; $i < $length; $i++) {
-        $transactionID .= $characters[rand(0, strlen($characters) - 1)];
-    }
-    return $transactionID;
-}
-
-$transactionID = generateTransactionID();
 
 // Check if discount code is provided
-if(isset($_POST["discount_code"]) && $_POST["discount_code"] != "") {
+if(isset($_POST["code"]) && $_POST["code"] != "") {
+    $code = $_POST['code'];
     // Sanitize the discount code input
-    $discount_code = mysqli_real_escape_string($conn, $_POST["discount_code"]);
+    $code = mysqli_real_escape_string($conn, $code);
 
     // Query to check if the discount code exists
-    $sql = "SELECT * FROM discounts WHERE discount_code = '$discount_code'";
+    $sql = "SELECT * FROM codes WHERE code = '$code'";
     $result = mysqli_query($conn, $sql);
 
     if ($result) {
@@ -80,8 +50,36 @@ if(isset($_POST["discount_code"]) && $_POST["discount_code"] != "") {
     }
 }
 
+// File upload
+$target_dir = "uploads/DLpics";
+if (!file_exists($target_dir)) {
+    mkdir($target_dir, 0755, true); // creates the directory recursively
+}
+
+// Check if image file is uploaded
+if(isset($_FILES["dlpic"]["tmp_name"]) && $_FILES["dlpic"]["tmp_name"] != "") {
+    $target_file = $target_dir . "/" . basename($_FILES["dlpic"]["name"]);
+    move_uploaded_file($_FILES["dlpic"]["tmp_name"], $target_file);
+    echo "File uploaded successfully.";
+} else {
+    echo "No file uploaded.";
+    exit();
+}
+
+// Function to generate random transaction ID
+function generateTransactionID($length = 6) {
+    $characters = '0123456789';
+    $transactionID = '';
+    for ($i = 0; $i < $length; $i++) {
+        $transactionID .= $characters[rand(0, strlen($characters) - 1)];
+    }
+    return $transactionID;
+}
+
+$transactionID = generateTransactionID();
+
 // Prepare SQL statement to insert data into database
-$sql = "INSERT INTO booking (pickuploc, returnloc, pickupdt, returndt, fullname, email, phone, dlpic, transaction_id, discount_code_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+$sql = "INSERT INTO booking (pickuploc, returnloc, pickupdt, returndt, fullname, email, phone, dlpic, transaction_id, code) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
 // Prepare and bind parameters
 $stmt = $conn->prepare($sql);
@@ -90,7 +88,7 @@ if (!$stmt) {
     die("Error: " . $conn->error); // Check for errors in prepare statement
 }
 
-$stmt->bind_param("ssssssissi", $pickuploc, $returnloc, $pickupdt, $returndt, $fullname, $email, $phone, $target_file, $transaction_id, $discount_code_id);
+$stmt->bind_param("ssssssisss", $pickuploc, $returnloc, $pickupdt, $returndt, $fullname, $email, $phone, $target_file, $transactionID, $code);
 
 // Execute the query
 if ($stmt->execute()) {
@@ -99,7 +97,7 @@ if ($stmt->execute()) {
     // Close connection
     $conn->close();
     // Redirect to thank you page with transaction ID
-    header("Location: thankyou.php?transaction_id=$transaction_id");
+    header("Location: thankyou.php?transaction_id=$transactionID");
     exit(); // Make sure no other code is executed after redirection
 } else {
     echo "Error: " . $stmt->error; // Use $stmt->error instead of $conn->error

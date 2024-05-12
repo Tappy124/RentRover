@@ -67,6 +67,11 @@
                 <li class="nav-item"><a class="nav-link" href="about-us.php">About Us</a></li>
                 
                 <li class="nav-item"><a class="nav-link" href="contact.php">Contact Us</a></li>
+                <li class="nav-item">
+                            <form class="nav-link" action="logout.php" method="post">
+                                <button type="submit" class="btn btn-link logout-btn" name="logout">Logout</button>
+                            </form>
+
             </ul>
           </div>
         </div>
