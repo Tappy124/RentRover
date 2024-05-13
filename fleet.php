@@ -53,8 +53,7 @@
                 </li> 
 
                 <li class="nav-item"><a class="nav-link" href="fleet.php">Cars</a></li>
-                <li class="nav-item"><a class="nav-link" href="offers.php">Offers</a></li>
-
+           
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">More</a>
                     

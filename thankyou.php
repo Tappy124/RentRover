@@ -9,6 +9,8 @@
     <h1>Thank You for Booking!</h1>
     <p>Your transaction ID is: <?php echo $_GET['transaction_id']; ?></p>
     <p>We will get in touch with you shortly.</p>
+    <a href="payment.php">Proceed to payment </a><br>
     <a href="index.php">Back to Home </a>
+    
 </body>
 </html>
