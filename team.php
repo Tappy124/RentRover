@@ -119,7 +119,7 @@
           <div class="col-md-4">
             <div class="team-member">
               <div class="thumb-container">
-                <img src="assets/images/team_02." alt="">
+              <img src="assets/images/tappy.jpg" alt="">
                 <div class="hover-effect">
                   <div class="hover-content">
                     <ul class="social-icons">
@@ -131,7 +131,7 @@
                 </div>
               </div>
               <div class="down-content">
-                <h4>Angel Manatad</h4>
+                <h4>Casas</h4>
                 <span>Frontend Dev</span>
                 <p>text</p>
               </div>
